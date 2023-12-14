@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Crawler Result</title>
+</head>
+<body>
+    <h1>Web Crawler Result</h1>
+    <ul>
+        {% for item in result %}
+            <li>
+                <strong>URL:</strong> {{ item.url }}<br>
+                <strong>Depth:</strong> {{ item.depth }}<br>
+                <strong>Links:</strong>
+                <ul>
+                    {% for link in item.links %}
+                        <li>{{ link }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
